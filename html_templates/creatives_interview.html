@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWSCC Scheduled Interview - Creatives Office</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Rubik', sans-serif;
+            line-height: 1.5;
+            background-color: #F4F1FA;
+            color: #232F3E;
+        }
+
+        table {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .wrapper {
+            max-width: 60rem;
+            padding-bottom: 0.3rem;
+        }
+
+        .header-logo {
+            display: block;
+            max-width: 100%;
+        }
+        .container{
+            padding: 2rem 1.5rem;
+        }
+        .main {
+            padding: 3rem 2rem 1rem 2rem;
+            text-align: justify;
+            background-color: #FFFFFF;
+            border-radius: 0.5rem;
+        }
+        .yellow{
+            color: #F2A12B;
+        }
+
+        hr.solid-1, hr.solid-2{
+            margin: 2.5rem 0 1.5rem 0;
+        }
+        .grey{
+            color: #666666;
+        }
+        .interview{
+            margin: -0.7rem auto auto 1rem;
+        }
+        .interview p{
+            margin-bottom: -0.6rem;
+        }
+        .interview-deets p{
+            margin-left: 2rem;
+            margin-bottom: -0.3rem;
+        }
+        .signature {
+            color: #666666;
+            padding-bottom: 1rem;
+            padding-top: 1.5rem;
+        }
+        .footer-logo{
+            display: block;
+            max-width: 100%;
+        }
+        .pad-s{
+            padding-top: 1.5rem;
+        }
+        .social img{
+            width: 2rem;
+            margin-top: -0.5rem;
+            margin-right: 1rem;
+        }
+        .social a{
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <table class="wrapper">
+        <tr>
+            <td style="background-color: #330066;">
+                <!-- Logo Header -->
+                <table>
+                    <tr>
+                        <td>
+                            <a href="#"><img src="https://i.postimg.cc/0jX4MfVD/Header.png" class="header-logo"></a>
+                        </td>
+                    </tr>
+                </table>
+
+                <!-- Main Content -->
+                <div class="container">
+                    <table class="main">
+                        <tr>
+                            <td>
+                                <p style = "padding-bottom: 1.5rem;">Hi <b>{{ NAME }}</b>,</p>
+                                <p>
+                                    Are you ready to unleash your creative magic? We hope you're feeling pumped because we've got some <span class="yellow">𝗔𝗪𝗦𝗼𝗺𝗲</span> news for you! Congratulations on moving forward to the next stage of the application process for the <span class="yellow">Creatives and Graphics Office</span> at AWS Cloud Club PUP - Manila!! For the next step, we are thrilled to invite you to a live interview where we can dive deeper into your creative brilliance.
+                                </p>
+                                <hr class="solid-1"></hr>
+                            </td>
+                        </tr>
+
+                    <tr>
+                        <td>
+                            <div class="interview">
+                                <p class="grey"><strong>Interview Details:</strong></p>
+                                <div class="interview-deets">
+                                    <p><span class="grey">Date: &nbsp;</span>{{ DATE }}</p>
+                                    <p><span class="grey">Time: &nbsp;</span>{{ TIME }}</p>
+                                </div>
+                                <p class="pad-s"><strong>Join our official Discord Server!</strong></p>
+                                <p>
+                                    <span class="grey">Discord Link: &nbsp;</span>
+                                    <a href="https://discord.gg/Ep6pfFH9">Link</a>
+                                </p>
+                                <p><span>Kindly change your nickname in this format: FirstName LastName (ex. Juan dela Cruz)<br/>
+                                <span class="grey" style="font-size: 15px"><em>(In case the link expires, contact us on our Facebook page.)</em></span></p>
+                            </div>
+                                
+                        <hr class="solid-2"></hr>
+
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <p>
+                                During the interview, we want to see the fire in your eyes, hear the enthusiasm in
+                                your voice, and witness the sparks of inspiration. Share your masterpieces, your
+                                wildest ideas, and the stories behind your creative process. We're not just looking
+                                for talent; we're looking for someone who brings a contagious energy that electrifies
+                                every project.
+                            </p>
+                    
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <p>
+                                So, buckle up and prepare to amaze us! Get your creativity fueled up, your imagination roaring, and let your true colors shine brightly. Show us why you're the perfect fit for our dynamic Creative Office! Just a heads up, there will also be a test involving the creation of a publication material that you must complete in 24 hours, so make sure to join in our discord server for further instructions and be ready to squeeze your creative juices!
+                            </p>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <p>
+                                If you have any questions, a sudden burst of inspiration, or if you simply want to
+                                share your excitement, feel free to reach out to us through this email. We're here to
+                                support you every step of the way.
+                            </p>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="signature">
+                                <strong>
+                                    — Roan P. Manansala
+                                </strong> <br>
+                                <i>Chief Relations and Communications Officer <br></i>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="social pad-s">
+                                <p class="grey"><i>Follow us on our social media pages:</i></p>
+
+                                <a href="https://www.facebook.com/AWSCloudClubPUPManila"><img
+                                    src="https://i.postimg.cc/kXN2MVvk/FaceBook.png" alt="Facebook Logo" alt="Facebook Logo"></a>
+                        
+                                <a href="https://www.instagram.com/awscc_pupmnl/"><img
+                                    src="https://i.postimg.cc/FFLfqCdF/Instagram.png" alt="Instagram Logo" alt="Instagram Logo"></a>
+                                    
+                                <a href="https://www.linkedin.com/company/aws-cloud-club-%E2%80%93-pup-manila/"><img
+                                    src="https://i.postimg.cc/151gZ0wG/LinkedIn.png" alt="LinkedIn Logo" alt="LinkedIn Logo"></a>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+                
+                <!-- Footer -->
+                <table>
+                    <tr>
+                        <td class="footer">
+                            <a href="#"><img src="https://i.postimg.cc/sX1Pgmt2/Footer1.png" alt="" class="footer-logo"></a>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
