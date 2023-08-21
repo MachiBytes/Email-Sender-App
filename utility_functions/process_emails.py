@@ -26,11 +26,11 @@ def update_template(template: str, subject: str) -> None:
     )
 
 
-def send_ses(data: dict, recipient: list[str]) -> None:
+def send_ses(data: dict) -> None:
     ses_client.send_templated_email(
         Source="awscloudclub.pupmnl@gmail.com",
         Destination={
-            "ToAddresses": recipient,
+            "ToAddresses": [data["EMAIL"]],
             "BccAddresses": ["markachilesflores2004@gmail.com", "awscloudclub.pupmnl@gmail.com"],
         },
         Template="awscc_template",

@@ -1,63 +1,84 @@
-from read_csv import read_csv
-from templates import get_html_templates
-from send_ses import send_ses, update_template
-from database import get_nickname
-from time import sleep
+# Open GUI
+# Open file dialog for template
+# Open file dialog for data {NAME: nickname, EMAIL: email of recipient, SUBJECT: str, *}
+import customtkinter as ctk
+import tkinter as tk
+import time
+from tkinter import filedialog
+from utility_functions.process_emails import update_template, send_ses
+from utility_functions.read_files import read_template, read_csv
+from utility_functions.database import get_nickname
 
 
-def get_office():
-    while True:
-        print("What office will we be working on?")
-        print("\t[C]reatives Office")
-        print("\t[M]arketing Office")
-        print("\t[R]elations Office")
-        print("\t[O]perations Office")
-        office = input(">>> ").lower()
-        if office in list("cmro"):
-            return office
-        print()
-        print("Incorrect input, please choose from [C/M/R/O]")
+class App:
+    def __init__(self) -> None:
+        ctk.set_appearance_mode("dark")
+        self.root = ctk.CTk()
+        self.root.geometry("500x400")
+        self.root.title("Email Sender")
+
+        self.title = ctk.CTkLabel(self.root, text="Email Sender", font=ctk.CTkFont(size=30, weight="bold"))
+        self.title.pack(padx=10, pady=(20, 20))
+
+        template_label = ctk.CTkLabel(self.root, text="Template", font=ctk.CTkFont(size=15))
+        template_label.pack(pady=(10, 0))
+
+        template_path = ctk.CTkTextbox(self.root, height=20, width=350, wrap="none", state="disabled")
+        template_path.pack(pady=(0, 5))
+
+        template_button = ctk.CTkButton(self.root, height=30, width=60, text="Open", command=lambda: self.openFile(template_path))
+        template_button.pack(pady=(0, 20))
+
+        data_label = ctk.CTkLabel(self.root, text="Data", font=ctk.CTkFont(size=15))
+        data_label.pack(pady=(10, 0))
+
+        data_path = ctk.CTkTextbox(self.root, height=20, width=350, wrap="none", state="disabled")
+        data_path.pack(pady=(0, 5))
+
+        data_button = ctk.CTkButton(self.root, height=30, width=60, text="Open", command=lambda: self.openFile(data_path))
+        data_button.pack(pady=(0, 10))
+
+        ctk.CTkButton(self.root, height=30, width=100, text="Submit", command=lambda: self.submit(template_path, data_path)).pack(
+            pady=(30, 0)
+        )
+
+        self.root.resizable(False, False)
+        self.root.mainloop()
+
+    def openFile(self, text_box):
+        text_box.configure(state="normal")
+        file_path = filedialog.askopenfilename()
+        if file_path:
+            text_box.delete("0.0", tk.END)
+            text_box.insert("0.0", file_path)
+        text_box.configure(state="disabled")
+
+    def submit(self, template_path, data_path):
+        # Get data of both text_boxes
+        template_path = template_path.get("0.0", tk.END).strip()
+        data_path = data_path.get("0.0", tk.END).strip()
+
+        # Parse content of files
+        template = read_template(template_path)
+        data = read_csv(data_path)
+
+        # Do the logic for email sending
+        for record in data:
+            if record.get("NICKNAME", "") == "":
+                record["NICKNAME"] = get_nickname(record["FULLNAME"])
+            print(f"Processing {record['NICKNAME']}...")
+            update_template(template, record["SUBJECT"])
+            send_ses(record)
+            print(f"Processing Done!")
+            time.sleep(0.1)
+        print("Done")
+
+        # Show a popup that the logic is done
+        popup = ctk.CTkToplevel(self.root)
+        popup_label = ctk.CTkLabel(popup, text="Emails are successfully sent!")
+        popup_label.pack(padx=20, pady=20)
+        popup.after(10, popup.focus)
 
 
 if __name__ == "__main__":
-    # Offices
-    offices = {
-        "Operations Office": "operations.csv",
-        "Operations Office": "relations.csv",
-        "Operations Office": "marketing.csv",
-        "Operations Office": "creatives.csv",
-    }
-
-    office = get_office()
-
-    # Subjects
-    subjects = {
-        "Creatives Office": "AWS Cloud Club - PUP Manila | Creatives Office: Get Ready to Shine!",
-        "Operations Office": "AWS Cloud Club - PUP Manila | Operations Office: Let's Execute This!",
-        "Marketing Office": "AWS Cloud Club - PUP Manila | Marketing Office: Get Ready to Make Waves!",
-        "Relations Office": "AWS Cloud Club - PUP Manila | Relations Office: Let's Connect!",
-    }
-
-    # Read CSV
-    data = read_csv(f"applicants_database/{offices[office]}")
-
-    # Get templates
-    templates = get_html_templates()
-
-    # Loop through data
-    for index, record in enumerate(data):
-        name = record["Full Name"]
-        print(f"Processing {name}, please wait...", end=" | ")
-        try:
-            nickname = get_nickname(name)
-        except Exception as e:
-            print(name, e)
-
-        template_data = {"NAME": nickname, "TIME": record["Time"], "DATE": record["Date"]}
-
-        update_template(templates[office], subjects[office])
-
-        # Send email
-        send_ses(template_data, [record["Personal Email"]])
-        print(f"Processing done!")
-        sleep(0.1)
+    app = App()

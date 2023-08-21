@@ -1,0 +1,169 @@
+<!-- 
+    data = {
+        "NICKNAME": str
+        "CLUB_ID": str (AWS-CC-2023-####)
+    }
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWSCC Scheduled Interview - Creatives Office</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Rubik', sans-serif;
+            line-height: 1.5;
+            background-color: #F4F1FA;
+            color: #232F3E;
+        }
+
+        table {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .purple{
+            color: #330066;
+        }
+        .yellow{
+            color: #F2A12B;
+        }
+
+        .purple , .yellow{
+            font-weight: 600;
+        }
+        .wrapper {
+            max-width: 60rem;
+            padding-bottom: 0.3rem;
+        }
+
+        .header-logo {
+            display: block;
+            max-width: 100%;
+        }
+        .container{
+            padding: 2rem 1.5rem;
+        }
+        .main {
+            padding: 3rem 2rem 1rem 2rem;
+            text-align: justify;
+            background-color: #FFFFFF;
+            border-radius: 0.5rem;
+        }
+
+        hr.solid{
+            margin: 1.5rem 0 0.8rem 0;
+        }
+        .grey{
+            color: #666666;
+        }
+        .footer-logo{
+            display: block;
+            max-width: 100%;
+        }
+        .pad-top-s{
+            padding-top: 1.5rem;
+        }
+        .social img{
+            width: 2rem;
+            margin-top: -0.5rem;
+            margin-right: 1rem;
+        }
+        .social a{
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <table class="wrapper">
+        <tr>
+            <td style="background-color: #330066;">
+                <!-- Logo Header -->
+                <table>
+                    <tr>
+                        <td>
+                            <a href="#"><img src="https://i.postimg.cc/0jX4MfVD/Header.png" class="header-logo"></a>
+                        </td>
+                    </tr>
+                </table>
+
+                <!-- Main Content -->
+                <div class="container">
+                    <table class="main">
+                        <tr>
+                            <td>
+                                <p>Hi {{ NICKNAME }},</p>
+                                <p>
+                                  Greetings and a warm welcome to the <span class="purple">AWS Cloud Club - PUP Manila</span>! We're thrilled to have you join our vibrant community. As you embark on this exciting journey with us, we want you to know that you're not just joining an organization; you're becoming part of a community that values collaboration, creativity, volunteerism and making a difference.
+                                </p>
+                                <p>
+                                  As an official member of our esteemed organization, you will have your own club ID. This will serve as your unique identification number throughout your stay in the club. This will be used in the future as part of your personal credential and as proof of your membership in the club. Please take note of your club ID and don't share it with anyone else. Don't worry if you forgot, we'll soon provide a way for you to access it again.
+                                </p>
+                                <p>Your club ID is <strong>{{ CLUB_ID }}</strong>.</p>
+
+                                <hr class="solid"></hr>
+                            </td>
+                        </tr>
+
+                    <tr>
+                        <td>
+                            <p>
+                              Here at <span class="purple">AWS Cloud Club - PUP Manila</span>, we believe in nurturing each member's unique talents and interests. Regardless of whether you are starting from scratch or you have expertise in your field, there's a place here for you to shine. Our diverse Skill Builder Departments offer a variety of opportunities for you to explore, learn, and grow. Memberships are closed, for now, but we'll update you as soon as it opens.
+
+                            </p>
+                            <p>
+                              We have a dynamic lineup of events, workshops, projects and initiatives planned for the upcoming months, all aimed at providing you with hands-on experiences, valuable skills, and a platform to connect with like-minded peers and professionals. So always be on the lookout!
+
+                            </p>
+                            <p>
+                              To get started, we encourage you to connect and socialize with your fellow members in this community. Feel free to join our online platform in Discord as this will be our main way of communication in this organization.
+                            </p>
+                            <p>
+                              <span class="grey">Discord Link: &nbsp;</span>
+                              <a href="https://discord.gg/Ep6pfFH9">Link</a>
+                          </p>
+                          <p>
+                            Once again, welcome to the <span class="purple">AWS Cloud Club - PUP Manila</span>! We're thrilled to have you on board, and we're excited to see the <span class="yellow">AWSome</span> impact you'll make.
+                          </p>
+                          <p style="padding-top: 0.8rem">It's always <span class="yellow">Day One!</span></p>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                      <td>
+                          <div class="social pad-top-s">
+                              <p class="grey"><i>Follow us on our social media pages:</i></p>
+
+                              <a href="https://www.facebook.com/AWSCloudClubPUPManila"><img
+                                  src="https://i.postimg.cc/kXN2MVvk/FaceBook.png" alt="Facebook Logo" alt="Facebook Logo"></a>
+                      
+                              <a href="https://www.instagram.com/awscc_pupmnl/"><img
+                                  src="https://i.postimg.cc/FFLfqCdF/Instagram.png" alt="Instagram Logo" alt="Instagram Logo"></a>
+                                  
+                              <a href="https://www.linkedin.com/company/aws-cloud-club-%E2%80%93-pup-manila/"><img
+                                  src="https://i.postimg.cc/151gZ0wG/LinkedIn.png" alt="LinkedIn Logo" alt="LinkedIn Logo"></a>
+                          </div>
+                      </td>
+                  </tr>
+              </table>
+          </div>
+              
+              <!-- Footer -->
+              <table>
+                  <tr>
+                      <td class="footer">
+                          <a href="#"><img src="https://i.postimg.cc/sX1Pgmt2/Footer1.png" alt="" class="footer-logo"></a>
+                      </td>
+                  </tr>
+              </table>
+          </td>
+      </tr>
+  </table>
+</body>
+</html>

@@ -1,3 +1,6 @@
 .env
-applicants_database/*
-send_email.py
+venv
+applicants_database
+members.json
+utility_functions/__pycache__
+/app
