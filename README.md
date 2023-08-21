@@ -33,21 +33,22 @@ This script was used for the sending of dynamic emails to the office applicants 
 
 ## Setting up your local database
 
-1. Setup a local database in MongoDB with 'awscc' as the database and 'members' as the collection
-2. Create a few sample documents with the fields 'fullName' and 'nickname'
+1. Setup a local database in MongoDB with `awscc` as the database and `members` as the collection
+2. Create a few sample documents with the fields `fullName` and `nickname`. The `fullName` field will be used to access the `nickname`
 
-## Setting up your 'applicants_database'
+# Using the app
 
-1. Create a folder in this directory and name it 'applicants_database'
-2. Create 4 CSV files inside this folder and name them 'creatives.csv', 'operations.csv', 'relations.csv', 'marketing.csv'
-3. Provide the necessary data inside the CSV files
-    - 'creatives.csv' and 'operations.csv' must have a 'Full Name', 'Date', 'Time', and 'Personal Email' field
-    - 'marketing.csv', and 'relations.csv' must have a 'Full Name' and 'Personal Email' field
-4. When creating the data for your CSV files, make sure that for every 'Full Name', there is an equivalent 'fullName' in your local MongoDB database as this field will be used to connect the records inside the CSV file to the documents inside the MongoDB database.
+1. Create a CSV file containing a `FULLNAME` or `NICKNAME` field along with a `SUBJECT` and `EMAIL` field.
+2. View the code for the HTML template that you will be using, commented at the top are the other required fields. Make sure that these fields are also satisfied in your CSV file.
+    - If you're using you're own HTML templates, enclose your template variables in double curly brackets like the example below:
+    ```
+    {{ NICKNAME }}
+    ```
+3. Run `main.py` and enjoy!
 
-# Running the script
+## Side Note
 
--   After finishing the setup, just run 'main.py'
+-   I forgot that you can't use this code because I'm using AWS SES and you're gonna need credentials to connect to AWS so... yeah. It works though, on my machine...
 
 ### For more inquiries...
 
