@@ -4,3 +4,4 @@ applicants_database
 members.json
 utility_functions/__pycache__
 /app
+data/

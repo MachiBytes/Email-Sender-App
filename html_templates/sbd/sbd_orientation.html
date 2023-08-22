@@ -1,0 +1,239 @@
+<!-- 
+    data: {
+        NICKNAME: str
+        DATE: str (Month Day, Year)
+        TIME: str (##:## AM|PM)
+    }
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWSCC Scheduled Interview - Creatives Office</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Rubik', sans-serif;
+            line-height: 1.5;
+            background-color: #F4F1FA;
+            color: #232F3E;
+        }
+
+        table {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .purple{
+            color: #330066;
+        }
+        .yellow{
+            color: #F2A12B;
+        }
+
+        .purple , .yellow{
+            font-weight: 600;
+        }
+
+        .wrapper {
+            max-width: 60rem;
+            padding-bottom: 0.3rem;
+        }
+
+        .header-logo {
+            display: block;
+            max-width: 100%;
+        }
+        .container{
+            padding: 2rem 1.5rem;
+        }
+        .main {
+            padding: 3rem 2rem 1rem 2rem;
+            text-align: justify;
+            background-color: #FFFFFF;
+            border-radius: 0.5rem;
+        }
+
+        hr.solid-1, hr.solid-2{
+            margin: 2.5rem 0 1.5rem 0;
+        }
+        .grey{
+            color: #666666;
+        }
+        ul{
+            list-style-type: disc;
+            margin-left: 1rem;
+            margin-right: 2rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+        .interview{
+            margin: -0.7rem 1rem auto 1rem;
+        }
+        .interview p{
+            margin-bottom: -0.6rem;
+        }
+        .interview-deets p{
+            margin-left: 2rem;
+            margin-bottom: -0.3rem;
+        }
+        .signature {
+            padding-bottom: 1rem;
+            padding-top: 1.5rem;
+        }
+        .footer-logo{
+            display: block;
+            max-width: 100%;
+        }
+        .pad-s{
+            padding-top: 1.5rem;
+        }
+        .social img{
+            width: 2rem;
+            margin-top: -0.5rem;
+            margin-right: 1rem;
+        }
+        .social a{
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <table class="wrapper">
+        <tr>
+            <td style="background-color: #330066;">
+                <!-- Logo Header -->
+                <table>
+                    <tr>
+                        <td>
+                            <a href="#"><img src="https://i.postimg.cc/0jX4MfVD/Header.png" class="header-logo"></a>
+                        </td>
+                    </tr>
+                </table>
+
+                <!-- Main Content -->
+                <div class="container">
+                    <table class="main">
+                        <tr>
+                            <td>
+                                <p style = "padding-bottom: 1.5rem;">Dear {{ NICKNAME }},</p>
+                                <p>
+                                    Greetings and a warm welcome! I hope this email finds you in high spirits. We wanted to take a moment to express our heartfelt appreciation for your enthusiastic interest in becoming an <span class="yellow">AWS Skill Builder Department</span>  for our incredible <span class="purple">AWS Cloud Club - PUP Manila</span>! 
+                                </p>
+                                <p>
+                                    It is <span class="purple">AWSome</span> to see students like you take the step forward to empower others with your knowledge and passion. Your dedication to fostering a culture of learning and growth within our club is inspiring. We firmly believe that your expertise and excitement for AWS will make a remarkable impact on the development of our members and the success of our community.
+                                </p>
+                                <hr class="solid-1"></hr>
+                            </td>
+                        </tr>
+
+                    <tr>
+                        <td>
+                            <div class="interview">
+                                <p>
+                                    In order to kick start this journey together, we will be having an <span class="yellow">AWS Skill Builder Orientation</span>—an engaging and informative session where we will share in-depth details about the position and everything it entails. Here's a glimpse of what we have in store for you: 
+                                </p>
+
+                                <ul>
+                                    <li>
+                                        Get to know our AWS Skill Builder Department's objectives and responsibilities, and how your role as a department head contributes to our club's mission and vision.
+                                    </li>
+
+                                    <li>
+                                        The journey of being an AWS Skill Builder Head from the essential preparation and resources and the long-term plan for your department.
+                                    </li>
+
+                                    <li>
+                                        Discover the wealth of resources, support, and opportunities available to you as a department head, and how we can help you thrive in this position.
+                                    </li>
+
+                                    <li>
+                                        Brace yourself for a lively Q&A session where we encourage you to ask any burning questions and share your ideas.
+                                    </li>
+                                </ul>
+                                
+                                <p class="grey"><strong>Orientation Details:</strong></p>
+                                <div class="interview-deets">
+                                    <p><span class="grey">Date: &nbsp;</span>{{ DATE }}</p>
+                                    <p><span class="grey">Time: &nbsp;</span>{{ TIME }}</p>
+                                </div>
+                                <p class="pad-s"><strong>Join our official Discord Server!</strong></p>
+                                <p>
+                                    <span class="grey">Discord Link: &nbsp;</span>
+                                    <a href="https://discord.gg/Gn3FaPggbv">Link</a>
+                                </p>
+                                <p><span>Kindly change your nickname in this format: FirstName LastName (ex. Juan dela Cruz)<br/>
+                                <span class="grey" style="font-size: 15px"><em>(In case the link expires, contact us on our Facebook page.)</em></span></p>
+                            </div>
+                                
+                        <hr class="solid-2"></hr>
+
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <p>
+                                This session will cover essential preparations and resources for the Final Interview, scheduled for September 20, 2023. A preparation period of four (4) weeks will be granted to each candidate before the Final Interview. Each department will offer positions to only two candidates for the roles of Department Head and Co-Head, while the remaining three candidates will be considered for seniority positions within their respective departments. Results of the final interview will be communicated on the same day of the interview. 
+                            </p>
+                    
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <p>
+                                We are genuinely grateful for your commitment and eagerness to become an <span class="yellow">AWS Skill Builder Department Head</span>. Together, let's embark on this exciting journey, create amazing experiences, and celebrate our community!
+                            </p>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="signature">
+                                <p>
+                                    In the service of the community,
+                                </p>
+                                <strong class="grey">
+                                    — AWS Cloud Club PUP - Manila
+                                </strong> <br>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="social pad-s">
+                                <p class="grey"><i>Follow us on our social media pages:</i></p>
+
+                                <a href="https://www.facebook.com/AWSCloudClubPUPManila"><img
+                                    src="https://i.postimg.cc/kXN2MVvk/FaceBook.png" alt="Facebook Logo" alt="Facebook Logo"></a>
+                        
+                                <a href="https://www.instagram.com/awscc_pupmnl/"><img
+                                    src="https://i.postimg.cc/FFLfqCdF/Instagram.png" alt="Instagram Logo" alt="Instagram Logo"></a>
+                                    
+                                <a href="https://www.linkedin.com/company/aws-cloud-club-%E2%80%93-pup-manila/"><img
+                                    src="https://i.postimg.cc/151gZ0wG/LinkedIn.png" alt="LinkedIn Logo" alt="LinkedIn Logo"></a>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+                
+                <!-- Footer -->
+                <table>
+                    <tr>
+                        <td class="footer">
+                            <a href="#"><img src="https://i.postimg.cc/sX1Pgmt2/Footer1.png" alt="" class="footer-logo"></a>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
