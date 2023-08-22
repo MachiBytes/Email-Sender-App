@@ -46,6 +46,10 @@ This script was used for the sending of dynamic emails to the office applicants 
     ```
 3. Run `main.py` and enjoy!
 
+###### Update
+
+-   I have created a data_templates folder for all the CSV files that you will need for each template. All necessary fields have already been supplied there.
+
 ## Side Note
 
 -   I forgot that you can't use this code because I'm using AWS SES and you're gonna need credentials to connect to AWS so... yeah. It works though, on my machine...
