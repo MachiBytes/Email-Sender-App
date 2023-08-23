@@ -1,7 +1,4 @@
 .env
 venv
-applicants_database
-members.json
-utility_functions/__pycache__
-/app
-data/
+data
+__pycache__
