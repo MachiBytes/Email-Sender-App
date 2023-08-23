@@ -18,4 +18,4 @@ def get_nickname(name: str) -> str:
 
 
 if __name__ == "__main__":
-    print(get_nickname("Cayat, Nyzel B."))
+    print(get_nickname("Flores Jr., Mark Achiles G."))

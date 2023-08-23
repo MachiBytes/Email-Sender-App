@@ -1,7 +1,8 @@
 import boto3
 import json
+import settings
 
-ses_client = boto3.client("ses")
+ses_client = boto3.client("ses", aws_access_key_id=settings.ACCESS_KEY, aws_secret_access_key=settings.SECRET_KEY)
 
 
 def create_template(template: str) -> None:
@@ -28,10 +29,10 @@ def update_template(template: str, subject: str) -> None:
 
 def send_ses(data: dict) -> None:
     ses_client.send_templated_email(
-        Source="awscloudclub.pupmnl@gmail.com",
+        Source=settings.EMAIL,
         Destination={
             "ToAddresses": [data["EMAIL"]],
-            "BccAddresses": ["markachilesflores2004@gmail.com", "awscloudclub.pupmnl@gmail.com"],
+            "BccAddresses": [settings.EMAIL],
         },
         Template="awscc_template",
         TemplateData=json.dumps(data),
