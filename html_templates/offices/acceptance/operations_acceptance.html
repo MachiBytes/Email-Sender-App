@@ -1,6 +1,8 @@
 <!-- 
     data: {
         NICKNAME: str
+        POSITION: str (under the / as the)
+        SUBCOMMITTEE: str (tech, multimedia, programs, logictics, ushers, registration)
     }
  -->
 
@@ -105,7 +107,8 @@
                                     <p style="padding-bottom: 1.5rem"><b>Greetings,</b> &nbsp;<b>{{ NICKNAME }}!</b></p>
                                     <p>
                                         Hats off to you! We're thrilled to share that you've secured your spot as a key
-                                        player in the <span class="yellow">Operations and Events Office</span> at
+                                        player in the <span class="yellow">Operations and Events Office</span> {{
+                                        POSITION }} <span class="yellow">{{ SUBCOMMITTEE }}</span> at
                                         <span class="purple">AWS Cloud Club - PUP Manila</span>! Congratulations on your
                                         selection, and welcome to a world of seamless execution and operational
                                         brilliance.
