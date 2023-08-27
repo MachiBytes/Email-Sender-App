@@ -1,3 +1,3 @@
-import database
-import process_emails
-import read_files
+from . import database
+from . import process_emails
+from . import read_files

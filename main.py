@@ -6,9 +6,9 @@ import tkinter as tk
 import time
 import app
 from tkinter import filedialog
-from utility_functions.process_emails import update_template, send_ses
-from utility_functions.read_files import read_template, read_csv
-from utility_functions.database import get_nickname
+from app.utility_functions.process_emails import update_template, send_ses
+from app.utility_functions.read_files import read_template, read_csv
+from app.utility_functions.database import get_nickname
 
 
 class App:
