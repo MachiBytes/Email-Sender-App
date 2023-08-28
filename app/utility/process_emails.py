@@ -31,7 +31,7 @@ def send_ses(data: dict) -> None:
     ses_client.send_templated_email(
         Source=settings.EMAIL,
         Destination={
-            "ToAddresses": ["manansalaroan11@gmail.com"],  # data["EMAIL"]
+            "ToAddresses": [data["EMAIL"]],  # data["EMAIL"]
             "BccAddresses": [settings.EMAIL],
         },
         Template="awscc_template",

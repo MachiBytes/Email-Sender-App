@@ -1,5 +1,5 @@
-from app.gui import App
+from app.gui import app_class
 
 
 if __name__ == "__main__":
-    app = App()
+    app = app_class.App()

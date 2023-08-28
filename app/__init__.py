@@ -1,3 +1,3 @@
 from . import settings
-from .utility import *
-from .gui import App
+from .utility import database, process_emails, read_files
+from .gui import app_class
