@@ -1,1 +1,1 @@
-from .appClass import App
+from . import app_class
