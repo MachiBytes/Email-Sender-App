@@ -1,20 +1,15 @@
 import random
-from pymongo import MongoClient
+import boto3
+from boto3.dynamodb.conditions import Key
+
+session = boto3.Session(profile_name="awscc-backend", region_name="ap-southeast-1")
+dynamodb = session.resource("dynamodb")
+table = dynamodb.Table("awscc_members")
 
 
 def get_nickname(email: str) -> str:
-    # Start a connection with mongodb
-    client = MongoClient("localhost", 27017)
-
-    # Get cursor to the 'awscc' database and 'members' collection
-    db = client.awscc
-    members = db.members
-
-    # Query the name from the database and return their corresponding nickname/s
-    results: list[dict] = list(members.find({"personalEmail": email}, {"_id": False, "nickname": True}))
-    nicknames: list[str] = results[0].get("nickname", ["applicant"])
-
-    return random.choice(nicknames)
+    response = table.query(IndexName="email-index", KeyConditionExpression=Key("email").eq(email))
+    return random.choice(response["Items"][0]["nicknames"])
 
 
 if __name__ == "__main__":

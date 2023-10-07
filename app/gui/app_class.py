@@ -18,6 +18,12 @@ class App:
         self.title = ctk.CTkLabel(self.root, text="Email Sender", font=ctk.CTkFont(size=30, weight="bold"))
         self.title.pack(padx=10, pady=(20, 20))
 
+        subject_label = ctk.CTkLabel(self.root, text="Subject", font=ctk.CTkFont(size=15))
+        subject_label.pack(pady=(10, 0))
+
+        self.subject = ctk.CTkTextbox(self.root, height=20, width=350, wrap="none")
+        self.subject.pack(pady=(0, 5))
+
         template_label = ctk.CTkLabel(self.root, text="Template", font=ctk.CTkFont(size=15))
         template_label.pack(pady=(10, 0))
 
@@ -65,7 +71,7 @@ class App:
             if record.get("NICKNAME", "") == "":
                 record["NICKNAME"] = get_nickname(record["EMAIL"])
             print(f"Processing {record['NICKNAME']}...")
-            update_template(template, record["SUBJECT"])
+            update_template(template, self.subject.get("0.0", tk.END).strip())
             send_ses(record)
             print(f"Processing Done!")
             time.sleep(0.1)
